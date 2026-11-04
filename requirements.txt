@@ -1,0 +1,25 @@
+# ============================================================
+# Auravox — AI Voice Enhancement
+# Python 3.9 – 3.11 required (3.11 recommended).
+# Python 3.12+ is NOT supported by the DeepFilterNet native library.
+# ============================================================
+
+# --- AI model (DeepFilterNet 3, MIT / Apache-2.0) ---
+DeepFilterNet==0.5.6
+# PyTorch is installed CPU-only by default. For NVIDIA GPU acceleration see
+# docs/INSTALL.md ("GPU acceleration") BEFORE installing, or install torch
+# with the command shown there first.
+torch==2.4.1
+torchaudio==2.4.1
+numpy==1.26.4          # <2.0 required by DeepFilterNet
+
+# --- Web server ---
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9
+
+# --- Audio processing ---
+soundfile>=0.12        # WAV/FLAC read & write
+scipy>=1.11            # low-cut filter
+pyloudnorm>=0.1.1      # EBU R128 loudness normalisation
+imageio-ffmpeg>=0.5    # bundled FFmpeg binary fallback (MP3/M4A/AAC decode)
